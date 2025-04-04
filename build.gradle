@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'ovo.baicaijun'
+version = '1.0-SNAPSHOT'
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds' // 强制检查SNAPSHOT更新
+}
+
+repositories {
+    maven {
+        name = 'ShirokoBotNexus'
+        url = 'http://103.40.13.67:25782/repository/maven-public/'
+        allowInsecureProtocol = true
+    }
+    mavenCentral()
+
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation 'ovo.baicaijun:shirokobot:1.0-SNAPSHOT' // 如果version是1.0-SNAPSHOT
+}
+
+test {
+    useJUnitPlatform()
+}

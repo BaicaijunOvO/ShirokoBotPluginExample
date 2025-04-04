@@ -1,0 +1,5 @@
+name: echo #插件命令 必写
+version: 1.0
+class: ovo.baicaijun.Main #PluginExecutor接口实现类 必写
+description: 一个简单的回声插件
+author: BaicaijunOvO
